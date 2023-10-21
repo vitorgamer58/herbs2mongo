@@ -139,11 +139,11 @@ describe('Query Find by ID', () => {
             booleanTest: true,
             stringTest: "aString",
             childEntity: {
-                numberTest: 100, booleanTest: true, stringTest: 'aString', arrayTest: null, grandChildTest: {
+                numberTest: 100, booleanTest: true, stringTest: 'aString', arrayTest: undefined, grandChildTest: {
                     numberTest: 100,
                     booleanTest: true,
                     stringTest: 'aString',
-                    arrayTest: null,
+                    arrayTest: undefined,
                     arrayEntitiesTest: [
                         {
                             numberTest: 100,

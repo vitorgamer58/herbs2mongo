@@ -154,8 +154,11 @@ class DataMapper {
 
       if (isArrayOfEntities) {
         return (value) => {
-          if (checker.isEmpty(value)) return null
+          if (checker.isEmpty(value)) return value
+
           return value?.map((item) => {
+            if(checker.isEmpty(item)) return item
+
             const object = Object.keys(item).reduce((obj, key) => {
               const childField = field?.children.find((i) => i.nameDb === key)
 
@@ -187,7 +190,7 @@ class DataMapper {
     function processEntity(field, payload) {
       const entityValue = payload[field.nameDb]
 
-      if (checker.isEmpty(entityValue)) return undefined
+      if (checker.isEmpty(entityValue)) return entityValue
 
       const object = field.type.schema.fields.reduce((obj, entityField) => {
         const fieldNameDb = convention.toCollectionFieldName(entityField.name)

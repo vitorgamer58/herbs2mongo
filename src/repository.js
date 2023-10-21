@@ -121,7 +121,7 @@ module.exports = class Repository {
      async findByID(ids) {
       const instance = await this.runner()
 
-      const parsedValue = Array.isArray(ids) ? this.convention.toObjectIdArray(ids) : [ObjectId(ids)]
+      const parsedValue = Array.isArray(ids) ? this.convention.toObjectIdArray(ids) : [new ObjectId(ids)]
 
       const result = await instance.collection(this.collectionQualifiedName).find({ _id: { $in : parsedValue }})
       if(!result) return null

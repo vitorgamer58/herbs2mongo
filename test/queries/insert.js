@@ -1,7 +1,7 @@
 const { entity, field } = require("@herbsjs/gotu")
 const Repository = require("../../src/repository")
 const assert = require("assert")
-const ObjectID = require('mongodb').ObjectID
+const { ObjectId } = require('mongodb')
 
 
 describe("Insert an Entity", () => {
@@ -43,7 +43,7 @@ describe("Insert an Entity", () => {
     //given
     let spy = {}
     const retFromDeb = { 
-      insertedId: ObjectID("60edc25fc39277307ca9a7ff"),
+      insertedId: new ObjectId("60edc25fc39277307ca9a7ff"),
       acknowledged : true
     }
     const collectionName = "aCollection"

@@ -87,8 +87,8 @@ describe('Query Find', () => {
       //when
 
       const ids = [
-        ObjectId('60edc25fc39277307ca9a7ff'),
-        ObjectId('80edd25fc39272307ca9a712'),
+        new ObjectId('60edc25fc39277307ca9a7ff'),
+        new ObjectId('80edd25fc39272307ca9a712'),
       ]
 
       const ret = await itemRepo.find({ _id : { $in : ids } })

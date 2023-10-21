@@ -1,6 +1,5 @@
 const { entity, field } = require('@herbsjs/gotu')
 const Repository = require('../src/repository')
-const { ObjectId } = require('mongodb')
 const connection = require('./connection')
 const assert = require('assert')
 let client = {}

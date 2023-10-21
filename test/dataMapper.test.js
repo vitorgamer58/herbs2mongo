@@ -377,6 +377,7 @@ describe('Data Mapper', () => {
                 ['date_test', 'dateTest', null],
                 ['object_test', 'objectTest', null],
                 ['array_test', 'arrayTest', null],
+                ['entity_test', 'entityTest', null],
                 ['numbers_test', 'numbersTest', null],
                 ['strings_test', 'stringsTest', [null, null]],
                 ['booleans_test', 'booleansTest', [null, null]],
@@ -402,12 +403,17 @@ describe('Data Mapper', () => {
             const Entity = givenAnComplexEntity()
             const samples = [
                 // TODO
-                // ['string_test', 'stringTest', undefined],
-                // ['strings_test', 'stringsTest', [undefined, undefined]],
                 // ['arrays_test', 'arraysTest', [[null]]]
+                ['number_test', 'numberTest', null],
+                ['string_test', 'stringTest', undefined],
                 ['date_test', 'dateTest', undefined],
                 ['array_test', 'arrayTest', undefined],
-                ['numbers_test', 'numbersTest', undefined],
+                ['object_test', 'objectTest', undefined],
+                ['entity_test', 'entityTest', undefined],
+                ['boolean_test', 'booleanTest', undefined],
+                ['booleans_test', 'booleansTest', [undefined, undefined]],
+                ['strings_test', 'stringsTest', [undefined, undefined]],
+                ['numbers_test', 'numbersTest', [undefined]],
                 ['dates_test', 'datesTest', [undefined, undefined]],
             ]
 
@@ -422,7 +428,7 @@ describe('Data Mapper', () => {
             })
         })
 
-        it('should empty array when array is empty in collection', () => {
+        it('should return empty array when array is empty in collection', () => {
             //given
             const Entity = givenAnComplexEntity()
 

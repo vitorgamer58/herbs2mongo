@@ -143,7 +143,7 @@ class DataMapper {
       }
 
       function dataParser(value, parser) {
-        if (value === null) return null
+        if (checker.isEmpty(value)) return value
         return parser(value)
       }
 
